@@ -24,15 +24,22 @@ function App() {
   };
 
   const fetchTours = async () => {
+    setLoading(true);
     
+    try { // handlering only Network Errros
       const response = await fetch(url);
       const tempTours = await response.json();
 
       console.log(tempTours);
-    
+      setLoading(false);
+      setTours(tempTours);
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+    }
   };
 
-  
+
   useEffect(() => {
     fetchTours();
   }, []); // renders only at initial render
