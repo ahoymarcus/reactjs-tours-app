@@ -3,8 +3,17 @@ import Tour from './Tour';
 
 
 
-const Tours = () => {
-  return <h2>tours component</h2>;
+const Tours = ({ tours }) => {
+  
+  
+  return (
+    <section>
+      <div className="title">
+        <h2>our tours</h2>
+      </div>
+
+    </section>
+  );
 };
 
 

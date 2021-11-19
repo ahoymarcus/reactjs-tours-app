@@ -19,7 +19,7 @@ function App() {
     if (loading) {
       return <Loading />;
     } else {
-      return <Tours />;
+      return <Tours tours={tours} />;
     }
   };
 
