@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=ly3m6mv5qvg
+// 0 hr 28' 00 ''
 import React, { useState, useEffect } from 'react'
 
 import Loading from './Loading'
@@ -39,12 +41,13 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     fetchTours();
   }, []); // renders only at initial render
 
+
   
+
   return (
     <main>
       {isLoading()}
