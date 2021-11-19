@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=ly3m6mv5qvg
-// 0 hr 28' 00 ''
+// 0 hr 50' 00 ''
 import React, { useState, useEffect } from 'react'
 
 import Loading from './Loading'
@@ -17,9 +17,18 @@ function App() {
   const [ tours, setTours ] = useState([]);
  
 
-  const isLoading = () => {
+  const renderComponents = () => {
+    
+    
     if (loading) {
       return <Loading />;
+    } else if (tours.length === 0) {
+      return (
+        <div className="title">
+          <h2>No tours left</h2>
+          <button className="btn" onClick={fetchTours} >Refresh</button>
+        </div>
+      );   
     } else {
       return <Tours tours={tours} removeTour={removeTour} />;
     }
@@ -55,7 +64,7 @@ function App() {
 
   return (
     <main>
-      {isLoading()}
+      {renderComponents()}
       
     </main>
   );
