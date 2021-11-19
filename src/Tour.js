@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-const Tour = ({ id, name, info, image, price }) => {
+const Tour = ({ id, name, info, image, price, removeTour }) => {
   const [ infoBtnText, setInfoBtnText ] = useState('show more');
   const [ infoText, setInfoText ] = useState(info.slice(0, 250) + '...');
 
@@ -37,7 +37,7 @@ const Tour = ({ id, name, info, image, price }) => {
             {infoBtnText}
           </button>
         </p>
-        <button className="delete-btn"  >not interested</button>
+        <button className="delete-btn" onClick={() => removeTour(id)} >not interested</button>
       </footer>
     </article>
   );
