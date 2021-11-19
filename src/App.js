@@ -44,6 +44,7 @@ function App() {
     fetchTours();
   }, []); // renders only at initial render
 
+  
   return (
     <main>
       {isLoading()}
