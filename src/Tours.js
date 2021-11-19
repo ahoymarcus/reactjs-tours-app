@@ -8,7 +8,7 @@ const Tours = ({ tours }) => {
   // console.log(name, info, image, price);
 
   const renderTour = tours.map((tour) => {
-    return <Tour key={tour.id} ></Tour>;
+    return <Tour key={tour.id} {...tour} ></Tour>;
   });
   
   return (
